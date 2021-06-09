@@ -39,11 +39,12 @@
     border-top: black;
     border-bottom: black;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     position: relative;
     background-image: url(https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/images/pianobg.jpg?raw=true);
     background-color: black;
     background-size: 1500px;
+    justify-content: center;
 }
 
 #pianowhitekeys{
@@ -56,7 +57,7 @@
     border-radius: 5px;
     border-color: black;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     display: flex;
     background: rgb(29, 28, 28);
     justify-content: center;
@@ -88,7 +89,8 @@
     font-family: inherit;
     border-top: black;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
+    justify-content: center;
 }
 
 #title{
