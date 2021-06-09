@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>Virtual Piano</title>
+        <link rel="stylesheet" href="VirtualPiano.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body id="mainbody">
+        <div id ="topbar">
+            <h1 id="title">Virtual Piano</h1>
+            <h1 id="titleshadow">Virtual Piano</h1>
+            <h2 id="subtitle">Verzeo <b>Web Development</b> Project</h2>
+        </div>
+        <div id="pianowhitekeys">
+            <!-- 1 -->
+            <div id="whitesegment">
+            <div id="whitesegment"> 
+                <div onclick="playkey(0)" class="whitekey key0"></div>
+                <div onclick="playkey(1)" class="whitekey key0"></div>
+                <div onclick="playkey(2)" class="whitekey key0"></div>
+                <div onclick="playkey(3)" class="whitekey key0"></div>
+                <div onclick="playkey(4)" class="whitekey key0"></div>
+                <div onclick="playkey(5)" class="whitekey key0"></div>
+                <div onclick="playkey(6)" class="whitekey key0"></div>
+            </div>
+            <!-- 2 -->
+            <div id="whitesegment"> 
+                <div onclick="playkey(7)" class="whitekey key0"></div>
+                <div onclick="playkey(8)" class="whitekey key0"></div>
+                <div onclick="playkey(9)" class="whitekey key0"></div>
+                <div onclick="playkey(10)" class="whitekey key0"></div>
+                <div onclick="playkey(11)" class="whitekey key0"></div>
+                <div onclick="playkey(12)" class="whitekey key0"></div>
+                <div onclick="playkey(13)" class="whitekey key0"></div>
+            </div>
+            <!-- 3 -->
+            <div id="whitesegment"> 
+                <div onclick="playkey(14)" class="whitekey key0"></div>
+                <div onclick="playkey(15)" class="whitekey key0"></div>
+                <div onclick="playkey(16)" class="whitekey key0"></div>
+                <div onclick="playkey(17)" class="whitekey key0"></div>
+                <div onclick="playkey(18)" class="whitekey key0"></div>
+                <div onclick="playkey(19)" class="whitekey key0"></div>
+                <div onclick="playkey(20)" class="whitekey key0"></div>
+            </div>
+            </div>
+        </div>
+        <div id="pianoblackkeys">
+                <div id="blacksegment">
+                    <div onclick="playkey(21)" class="blackkey1 key1"></div>
+                    <div onclick="playkey(22)" class="blackkey2 key1"></div>
+                    <div onclick="playkey(23)" class="blackkey3 key1"></div>
+                    <div onclick="playkey(24)" class="blackkey4 key1"></div>
+                    <div onclick="playkey(25)" class="blackkey5 key1"></div>
+                </div>
+                <div id="blacksegment">
+                    <div onclick="playkey(26)" class="blackkey1 key1"></div>
+                    <div onclick="playkey(27)" class="blackkey2 key1"></div>
+                    <div onclick="playkey(28)" class="blackkey3 key1"></div>
+                    <div onclick="playkey(29)" class="blackkey4 key1"></div>
+                    <div onclick="playkey(30)" class="blackkey5 key1"></div>
+                </div>
+                <div id="blacksegment">
+                    <div onclick="playkey(31)" class="blackkey1 key1"></div>
+                    <div onclick="playkey(32)" class="blackkey2 key1"></div>
+                    <div onclick="playkey(33)" class="blackkey3 key1"></div>
+                    <div onclick="playkey(34)" class="blackkey4 key1"></div>
+                    <div onclick="playkey(35)" class="blackkey5 key1"></div>
+                </div>
+        </div>
+        <div id="bottombar">
+            <div id="pianochanger">
+                <button id="themechanger" onclick="changetheme()">Change Theme</button>
+                <button id="colorchanger" onclick="changecolor()">Change Color</button>
+            </div>
+            <br>
+            <h2>Made with <heart id="heart">♥</heart> by Dhyan Hembrom </h2>
+        </div>
+    </body>
+    </html>
+    <script>
+        // red, yellow, green, blue#f5f5f5
+        var colors = ['#f73f26', '#f7fd04', '#56c035', '#233e8b', '#e9d4c3'];
+        var themes = ['#a58faa', '#de8971', '#ff9f40', '#e48257', '#1d1c1c'];
+        var audios = [
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203458__tesabob2001__a3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203459__tesabob2001__a-5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203460__tesabob2001__a-4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203462__tesabob2001__b4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203463__tesabob2001__b3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203464__tesabob2001__a5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203465__tesabob2001__a4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203466__tesabob2001__c-3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203467__tesabob2001__b5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203468__tesabob2001__f3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203470__tesabob2001__e3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203471__tesabob2001__e4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203472__tesabob2001__d4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203473__tesabob2001__d5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203476__tesabob2001__e5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203478__tesabob2001__c4-middle-c.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203479__tesabob2001__c3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203480__tesabob2001__c-5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203481__tesabob2001__c-4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203482__tesabob2001__d-4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203483__tesabob2001__d-3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203484__tesabob2001__c6.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203485__tesabob2001__c5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203486__tesabob2001__d3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203487__tesabob2001__d-5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203488__tesabob2001__g-3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203489__tesabob2001__f5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203490__tesabob2001__g-5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203491__tesabob2001__g-4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203492__tesabob2001__g4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203493__tesabob2001__g3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203495__tesabob2001__g5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203499__tesabob2001__f-5.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203500__tesabob2001__f-4.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203501__tesabob2001__f-3.mp3?raw=true',
+            'https://github.com/HDhyan0912/VirtualPianoVerzeo/blob/main/resources/audio/12995__tesabob2001__piano-keys-c3-c6/203502__tesabob2001__a-3.mp3?raw=true',
+        ];
+
+        function changetheme(){
+            var i = Math.floor(Math.random() * themes.length);
+            document.getElementById('pianowhitekeys').style.background = themes[i];
+            document.getElementById('themechanger').style.borderColor = themes[i];
+            console.log(themes[i]);
+        }
+
+        function changecolor(){
+            var i = Math.floor(Math.random() * colors.length);
+            elements = document.getElementsByClassName("whitekey");
+            for(var j = 0; j < 21; j++){
+                elements[j].style.backgroundColor= colors[i];
+            }
+            document.getElementById('colorchanger').style.borderColor = colors[i];
+            console.log(colors[i]);
+        }   
+
+        function playkey(c){
+            var audio = new Audio(audios[c]);
+            audio.play();
+        }
+    </script>
