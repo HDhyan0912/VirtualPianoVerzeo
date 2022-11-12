@@ -36,25 +36,6 @@
     text-align: center;
 }
 
-#white-text{
-    font-family: 'Poiret One', monospace;
-    font-size: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 80%;
-}
-
-#black-text{
-    font-family: 'Poiret One', monospace;
-    font-size: 13px;
-    text-align: center;
-    color: #ffffff;
-    position: relative;
-    top: 70%;
-}
-
 #pianowhitekeys{
     position: relative;
     margin: auto;
